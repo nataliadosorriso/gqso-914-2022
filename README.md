@@ -9,3 +9,7 @@ Autoras:
 * Louise Jordana
 * Maria Rafaela
 * Evelly Nayara
+
+Alteração 1
+Data: 18.05.2022
+Autora: Natália
