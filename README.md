@@ -11,8 +11,8 @@ Autoras:
 * Evelly Nayara
 
 
-Alteração 2
+Alteração
 Data: 01.06.2022
 Autora: Louise, Rafaela, Natália e Evelly
 
-Aulas de GQSO!!!
+Aulas de GQSO no Laboratório!!!
