@@ -10,6 +10,8 @@ Autoras:
 * Maria Rafaela
 * Evelly Nayara
 
+
 Alteração 2
 Data: 01.06.2022
-Autora: Louise e Rafaela
+Autora: Louise, Rafaela, Natália e Evelly
+
