@@ -11,5 +11,5 @@ Autoras:
 * Evelly Nayara
 
 Alteração 1
-Data: 18.05.2022
-Autora: Natália
+Data: 01.06.2022
+Autoras: Natália e Evelly
