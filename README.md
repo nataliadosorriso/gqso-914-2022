@@ -11,5 +11,5 @@ Autoras:
 * Evelly Nayara
 
 Alteração 2
-Data: 18.05.2022
-Autora: Louise
+Data: 01.06.2022
+Autora: Louise e Rafaela
