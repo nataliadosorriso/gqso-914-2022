@@ -1,4 +1,4 @@
-package com.danielfireman.ifal.calcapi;
+package com.nataliadosorriso.ifal.calcapi;
 
 import io.jooby.annotations.GET;
 import io.jooby.annotations.Path;
