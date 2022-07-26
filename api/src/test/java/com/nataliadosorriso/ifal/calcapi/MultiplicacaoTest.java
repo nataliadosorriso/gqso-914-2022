@@ -23,7 +23,7 @@ public class MultiplicacaoTest {
     public void multiplicacao_operadorString() {
         MockRouter router = new MockRouter(new App());
         assertThrows(BadRequestException.class, () ->{
-            router.get("/multiplicacao/a/a", rsp -> {});
+            router.get("/multiplicacao/b/b", rsp -> {});
         });
     }
 
