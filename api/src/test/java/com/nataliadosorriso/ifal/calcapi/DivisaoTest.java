@@ -23,7 +23,7 @@ public class DivisaoTest {
     public void divisao_operadorString() {
         MockRouter router = new MockRouter(new App());
         assertThrows(BadRequestException.class, () ->{
-            router.get("/divisao/a/a", rsp -> {});
+            router.get("/divisao/b/b", rsp -> {});
         });
     }
 
