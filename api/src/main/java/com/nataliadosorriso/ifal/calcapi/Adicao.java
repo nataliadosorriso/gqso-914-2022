@@ -9,14 +9,14 @@ import io.jooby.exception.BadRequestException;
 public class Adicao {
 
     @GET
-    public double adicao(@PathParam("n1") String n1, @PathParam("n2") String n2) {
+    public double adicao(@PathParam("n1") String num1, @PathParam("n2") String num2) {
         try {
-            if (n1 == null || n2 == null) {
+            if (num1 == null || num2 == null) {
                 throw new BadRequestException("Parâmetros insuficientes");
             }
-            return Double.parseDouble(n1) + Double.parseDouble(n2);
+            return Double.parseDouble(num1) + Double.parseDouble(num2);
         } catch (NumberFormatException nfe) {
-            throw new BadRequestException("Parâmetros inválidos: " + n1+ ", " + n2);
+            throw new BadRequestException("Parâmetros inválidos: " + num1+ ", " + num2);
         }
     }
 }

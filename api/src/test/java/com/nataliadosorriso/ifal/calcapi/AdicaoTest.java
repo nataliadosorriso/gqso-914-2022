@@ -23,7 +23,7 @@ public class AdicaoTest {
     public void adicao_operadorString() {
         MockRouter router = new MockRouter(new App());
         assertThrows(BadRequestException.class, () ->{
-            router.get("/adicao/a/a", rsp -> {});
+            router.get("/adicao/b/b", rsp -> {});
         });
     }
 
