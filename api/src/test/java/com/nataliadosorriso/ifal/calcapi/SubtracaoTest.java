@@ -11,19 +11,35 @@ import io.jooby.exception.BadRequestException;
 
 public class SubtracaoTest {
     @Test
-    public void adicao() {
+    public void subtracao() {
         MockRouter router = new MockRouter(new App());
-        router.get("/adicao/2/4", rsp -> {
-            assertEquals(6.0, rsp.value());
+        router.get("/subtracao/4/2", rsp -> {
+            assertEquals(2.0, rsp.value());
             assertEquals(StatusCode.OK, rsp.getStatusCode());
         });
     }
 
     @Test
-    public void adicao_operadorString() {
+    public void subtracao_operadorString() {
         MockRouter router = new MockRouter(new App());
         assertThrows(BadRequestException.class, () ->{
-            router.get("/adicao/a/a", rsp -> {});
+            router.get("/subtracao/a/a", rsp -> {});
+        });
+    }
+
+    @Test
+    public void subtracao_semParametros() {
+        MockRouter router = new MockRouter(new App());
+        assertThrows(BadRequestException.class, () ->{
+            router.get("/subtracao", rsp -> {});
+        });
+    }
+
+    @Test
+    public void subtracao_semUmParametro() {
+        MockRouter router = new MockRouter(new App());
+        assertThrows(BadRequestException.class, () ->{
+            router.get("/subtracao/2", rsp -> {});
         });
     }
 }

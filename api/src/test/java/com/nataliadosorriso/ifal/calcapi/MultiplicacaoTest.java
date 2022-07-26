@@ -9,37 +9,37 @@ import io.jooby.MockRouter;
 import io.jooby.StatusCode;
 import io.jooby.exception.BadRequestException;
 
-public class AdicaoTest {
+public class MultiplicacaoTest {
     @Test
-    public void adicao() {
+    public void multiplicacao() {
         MockRouter router = new MockRouter(new App());
-        router.get("/adicao/2/4", rsp -> {
-            assertEquals(6.0, rsp.value());
+        router.get("/multiplicacao/4/2", rsp -> {
+            assertEquals(8.0, rsp.value());
             assertEquals(StatusCode.OK, rsp.getStatusCode());
         });
     }
 
     @Test
-    public void adicao_operadorString() {
+    public void multiplicacao_operadorString() {
         MockRouter router = new MockRouter(new App());
         assertThrows(BadRequestException.class, () ->{
-            router.get("/adicao/a/a", rsp -> {});
+            router.get("/multiplicacao/a/a", rsp -> {});
         });
     }
 
     @Test
-    public void adicao_semParametros() {
+    public void multiplicacao_semParametros() {
         MockRouter router = new MockRouter(new App());
         assertThrows(BadRequestException.class, () ->{
-            router.get("/adicao", rsp -> {});
+            router.get("/multiplicacao", rsp -> {});
         });
     }
 
     @Test
-    public void adicao_semUmParametro() {
+    public void multiplicacao_semUmParametro() {
         MockRouter router = new MockRouter(new App());
         assertThrows(BadRequestException.class, () ->{
-            router.get("/adicao/2", rsp -> {});
+            router.get("/multiplicacao/2", rsp -> {});
         });
     }
 }
