@@ -23,7 +23,7 @@ public class SubtracaoTest {
     public void subtracao_operadorString() {
         MockRouter router = new MockRouter(new App());
         assertThrows(BadRequestException.class, () ->{
-            router.get("/subtracao/a/a", rsp -> {});
+            router.get("/subtracao/b/b", rsp -> {});
         });
     }
 
