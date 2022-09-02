@@ -7,9 +7,21 @@ import org.junit.jupiter.api.Test;
 
 import io.jooby.MockRouter;
 import io.jooby.StatusCode;
-import io.jooby.exception.BadRequestException;
+
+//import io.jooby.exception.BadRequestException;
 
 public class AdicaoTest {
+
+    //adicionado
+
+    @Test
+    public void chamaadicao() {
+      Adicao adicao = new Adicao();
+      assertEquals(6.0, adicao.adicao("2", "4"));
+    }
+
+    //
+
     @Test
     public void adicao() {
         MockRouter router = new MockRouter(new App());
@@ -19,10 +31,12 @@ public class AdicaoTest {
         });
     }
 
+    //nas demais modifiquei de BadRequestException para NumberFormatException
+
     @Test
     public void adicao_operadorString() {
         MockRouter router = new MockRouter(new App());
-        assertThrows(BadRequestException.class, () ->{
+        assertThrows(NumberFormatException.class, () ->{
             router.get("/adicao/b/b", rsp -> {});
         });
     }
@@ -30,7 +44,7 @@ public class AdicaoTest {
     @Test
     public void adicao_semParametros() {
         MockRouter router = new MockRouter(new App());
-        assertThrows(BadRequestException.class, () ->{
+        assertThrows(NumberFormatException.class, () ->{
             router.get("/adicao", rsp -> {});
         });
     }
@@ -38,7 +52,7 @@ public class AdicaoTest {
     @Test
     public void adicao_semUmParametro() {
         MockRouter router = new MockRouter(new App());
-        assertThrows(BadRequestException.class, () ->{
+        assertThrows(NumberFormatException.class, () ->{
             router.get("/adicao/2", rsp -> {});
         });
     }

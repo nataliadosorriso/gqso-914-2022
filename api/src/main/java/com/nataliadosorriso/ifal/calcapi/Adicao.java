@@ -1,12 +1,30 @@
 package com.nataliadosorriso.ifal.calcapi;
 
+/*
+comentei
+
 import io.jooby.annotations.GET;
 import io.jooby.annotations.Path;
 import io.jooby.annotations.PathParam;
 import io.jooby.exception.BadRequestException;
+*/
+
+import io.jooby.annotations.*;
 
 @Path("/adicao/{n1}?/{n2}?")
 public class Adicao {
+
+    //adicionei
+
+    @GET
+    public double adicao(@PathParam("n1") String num1, @PathParam("n2") String num2) {
+        return Double.parseDouble(num1) + Double.parseDouble(num2);
+    }
+
+    //
+
+    /*
+    comentei
 
     @GET
     public double adicao(@PathParam("n1") String num1, @PathParam("n2") String num2) {
@@ -19,4 +37,5 @@ public class Adicao {
             throw new BadRequestException("Parâmetros inválidos: " + num1+ ", " + num2);
         }
     }
+    */
 }
