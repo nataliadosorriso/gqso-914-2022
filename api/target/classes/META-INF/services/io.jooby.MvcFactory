@@ -1,2 +1,6 @@
+com.nataliadosorriso.ifal.calcapi.Divisao$Module
+com.nataliadosorriso.ifal.calcapi.Subtracao$Module
+com.nataliadosorriso.ifal.calcapi.Controller$Module
 com.nataliadosorriso.ifal.calcapi.Adicao$Module
+com.nataliadosorriso.ifal.calcapi.Multiplicacao$Module
 
