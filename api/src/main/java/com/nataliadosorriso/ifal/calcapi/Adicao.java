@@ -5,7 +5,7 @@ import io.jooby.annotations.Path;
 import io.jooby.annotations.PathParam;
 import io.jooby.exception.BadRequestException;
 
-import io.jooby.annotations.*;
+//import io.jooby.annotations.*;
 
 @Path("/adicao/{n1}?/{n2}?")
 public class Adicao {
