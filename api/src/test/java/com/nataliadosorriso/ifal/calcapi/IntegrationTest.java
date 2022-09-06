@@ -42,7 +42,7 @@ public class IntegrationTest {
     }
   }
   @Test
-  public void multiplicacao_erro(int serverPort) throws IOException {
+  public void multiplicacao_carct(int serverPort) throws IOException {
     Request req = new Request.Builder()
         .url("http://localhost:" + serverPort + "/multiplicacao/2/a")
         .build();
