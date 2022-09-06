@@ -27,4 +27,28 @@ public class IntegrationTest {
       assertEquals(StatusCode.OK.value(), rsp.code());
     }
   }
+
+  //adição
+
+  @Test
+  public void adicao(int serverPort) throws IOException {
+    Request req = new Request.Builder()
+        .url("http://localhost:" + serverPort + "/adicao/8/5")
+        .build();
+
+    try (Response rsp = client.newCall(req).execute()) {
+      assertEquals("13.0", rsp.body().string());
+      assertEquals(StatusCode.OK.value(), rsp.code());
+    }
+  }
+  @Test
+  public void adicao_erro(int serverPort) throws IOException {
+    Request req = new Request.Builder()
+        .url("http://localhost:" + serverPort + "/adicao/2/a")
+        .build();
+
+    try (Response rsp = client.newCall(req).execute()) {
+      assertEquals(StatusCode.BAD_REQUEST.value(), rsp.code());
+    }
+  }
 }
