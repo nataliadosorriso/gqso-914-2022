@@ -42,7 +42,7 @@ public class IntegrationTest {
     }
   }
   @Test
-  public void divisao_erro(int serverPort) throws IOException {
+  public void divisao_carct(int serverPort) throws IOException {
     Request req = new Request.Builder()
         .url("http://localhost:" + serverPort + "/divisao/2/a")
         .build();
