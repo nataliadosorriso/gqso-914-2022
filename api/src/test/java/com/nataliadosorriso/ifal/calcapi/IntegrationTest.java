@@ -27,6 +27,30 @@ public class IntegrationTest {
       assertEquals(StatusCode.OK.value(), rsp.code());
     }
   }
+  
+//adição
+
+  @Test
+  public void adicao(int serverPort) throws IOException {
+    Request req = new Request.Builder()
+        .url("http://localhost:" + serverPort + "/adicao/8/5")
+        .build();
+
+    try (Response rsp = client.newCall(req).execute()) {
+      assertEquals("13.0", rsp.body().string());
+      assertEquals(StatusCode.OK.value(), rsp.code());
+    }
+  }
+  @Test
+  public void adicao_carct(int serverPort) throws IOException {
+    Request req = new Request.Builder()
+        .url("http://localhost:" + serverPort + "/adicao/2/a")
+        .build();
+
+    try (Response rsp = client.newCall(req).execute()) {
+      assertEquals(StatusCode.BAD_REQUEST.value(), rsp.code());
+    }
+  }
 
   //subtracao
 
@@ -42,7 +66,7 @@ public class IntegrationTest {
     }
   }
   @Test
-  public void subtracao_caract(int serverPort) throws IOException {
+  public void subtracao_carct(int serverPort) throws IOException {
     Request req = new Request.Builder()
         .url("http://localhost:" + serverPort + "/subtracao/2/a")
         .build();
@@ -66,7 +90,7 @@ public class IntegrationTest {
     }
   }
   @Test
-  public void multiplicacao_erro(int serverPort) throws IOException {
+  public void multiplicacao_carct(int serverPort) throws IOException {
     Request req = new Request.Builder()
         .url("http://localhost:" + serverPort + "/multiplicacao/2/a")
         .build();
@@ -90,7 +114,7 @@ public class IntegrationTest {
     }
   }
   @Test
-  public void divisao_erro(int serverPort) throws IOException {
+  public void divisao_carct(int serverPort) throws IOException {
     Request req = new Request.Builder()
         .url("http://localhost:" + serverPort + "/divisao/2/a")
         .build();
@@ -99,5 +123,4 @@ public class IntegrationTest {
       assertEquals(StatusCode.BAD_REQUEST.value(), rsp.code());
     }
   }
-  
 }
