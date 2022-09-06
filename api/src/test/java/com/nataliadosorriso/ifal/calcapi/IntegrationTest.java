@@ -28,6 +28,30 @@ public class IntegrationTest {
     }
   }
 
+//multiplicação
+
+  @Test
+  public void multiplicacao(int serverPort) throws IOException {
+    Request req = new Request.Builder()
+        .url("http://localhost:" + serverPort + "/multiplicacao/8/5")
+        .build();
+
+    try (Response rsp = client.newCall(req).execute()) {
+      assertEquals("40.0", rsp.body().string());
+      assertEquals(StatusCode.OK.value(), rsp.code());
+    }
+  }
+  @Test
+  public void multiplicacao_erro(int serverPort) throws IOException {
+    Request req = new Request.Builder()
+        .url("http://localhost:" + serverPort + "/multiplicacao/2/a")
+        .build();
+
+    try (Response rsp = client.newCall(req).execute()) {
+      assertEquals(StatusCode.BAD_REQUEST.value(), rsp.code());
+    }
+  }
+
   //divisão
 
   @Test
@@ -42,7 +66,7 @@ public class IntegrationTest {
     }
   }
   @Test
-  public void divisao_carct(int serverPort) throws IOException {
+  public void divisao_erro(int serverPort) throws IOException {
     Request req = new Request.Builder()
         .url("http://localhost:" + serverPort + "/divisao/2/a")
         .build();
@@ -51,4 +75,5 @@ public class IntegrationTest {
       assertEquals(StatusCode.BAD_REQUEST.value(), rsp.code());
     }
   }
+  
 }
