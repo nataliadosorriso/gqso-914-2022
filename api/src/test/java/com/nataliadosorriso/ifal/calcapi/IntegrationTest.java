@@ -42,7 +42,7 @@ public class IntegrationTest {
     }
   }
   @Test
-  public void adicao_erro(int serverPort) throws IOException {
+  public void adicao_carct(int serverPort) throws IOException {
     Request req = new Request.Builder()
         .url("http://localhost:" + serverPort + "/adicao/2/a")
         .build();
