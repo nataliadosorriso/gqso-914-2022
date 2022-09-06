@@ -28,7 +28,31 @@ public class IntegrationTest {
     }
   }
 
-//multiplicação
+  //subtracao
+
+  @Test
+  public void subtracao(int serverPort) throws IOException {
+    Request req = new Request.Builder()
+        .url("http://localhost:" + serverPort + "/subtracao/8/5")
+        .build();
+
+    try (Response rsp = client.newCall(req).execute()) {
+      assertEquals("3.0", rsp.body().string());
+      assertEquals(StatusCode.OK.value(), rsp.code());
+    }
+  }
+  @Test
+  public void subtracao_caract(int serverPort) throws IOException {
+    Request req = new Request.Builder()
+        .url("http://localhost:" + serverPort + "/subtracao/2/a")
+        .build();
+
+    try (Response rsp = client.newCall(req).execute()) {
+      assertEquals(StatusCode.BAD_REQUEST.value(), rsp.code());
+    }
+  }
+
+  //multiplicação
 
   @Test
   public void multiplicacao(int serverPort) throws IOException {
